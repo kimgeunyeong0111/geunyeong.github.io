@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="김근영 AI 콘텐츠 포트폴리오">
+<style>body{margin:0}img{max-width:100%}</style>
+<title>김근영 포트폴리오</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+KR:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: 흑백 슬라이드 리듬 — 흰 섹션과 검은 섹션이 번갈아 나오고, 숫자는 크게, 형광 살구색 밑줄로 강조 */
+:root{
+  --bg:#f6f6f4; --fg:#121212; --muted:#6b6b68; --line:#d9d9d4; --card:#ffffff;
+  --band:#0f0f0f; --band-fg:#f2f2ef; --band-muted:#9a9a95; --band-line:#2a2a28;
+  --mark:#ffd2a0; --mark-ink:#121212; --accent:#c96a2b;
+  --f-display:"Cinzel","Times New Roman",serif;
+  --f-body:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --maxw:1180px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111110; --fg:#ecece8; --muted:#9b9b96; --line:#2c2c2a; --card:#1a1a19;
+  --band:#000000; --band-fg:#f2f2ef; --band-muted:#8f8f8a; --band-line:#262624;
+  --mark:#f6c58e; --accent:#e89a5f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111110; --fg:#ecece8; --muted:#9b9b96; --line:#2c2c2a; --card:#1a1a19;
+  --band:#000000; --band-fg:#f2f2ef; --band-muted:#8f8f8a; --band-line:#262624;
+  --mark:#f6c58e; --accent:#e89a5f; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.7;word-break:keep-all;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3{text-wrap:balance;margin:0;line-height:1.25}
+p{margin:0}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap-pad{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+section{padding-block:96px}
+.band{background:var(--band);color:var(--band-fg)}
+.band .muted{color:var(--band-muted)}
+.muted{color:var(--muted)}
+.mark{background:linear-gradient(transparent 38%,var(--mark) 38%,var(--mark) 92%,transparent 92%);color:inherit;padding:0 .12em}
+.band .mark{background:var(--mark);color:var(--mark-ink)}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.band .eyebrow{color:var(--band-muted)}
+.sec-head{display:grid;gap:14px;margin-bottom:48px;max-width:760px}
+.sec-head h2{font-size:clamp(28px,4.4vw,46px);font-weight:900;letter-spacing:-.02em}
+.sec-head p{font-size:17px;color:var(--muted);max-width:62ch}
+.band .sec-head p{color:var(--band-muted)}
+.num{font-variant-numeric:tabular-nums;font-weight:900;letter-spacing:-.02em}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:58px}
+.brand{font-family:var(--f-display);font-weight:700;letter-spacing:.18em;font-size:15px;text-decoration:none;white-space:nowrap}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0 0 0 auto;padding:0;overflow-x:auto;scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav a.l{display:block;padding:6px 10px;font-size:14px;text-decoration:none;color:var(--muted);border-radius:6px;white-space:nowrap}
+.nav a.l:hover,.nav a.l:focus-visible{color:var(--fg);background:var(--line)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:640px){.brand{display:none}.nav ul{margin-left:0}}
+
+/* hero */
+.hero{padding-block:72px 64px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:48px;align-items:end}
+.hero h1{font-size:clamp(40px,7.4vw,92px);font-weight:900;letter-spacing:-.04em;line-height:1.02}
+.hero h1 .en{display:block;font-family:var(--f-display);font-weight:500;font-size:.34em;letter-spacing:.32em;margin-bottom:18px;color:var(--muted)}
+.hero .lead{font-size:clamp(17px,2vw,20px);margin-top:28px;max-width:34ch}
+.hero .roles{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--muted);background:var(--card)}
+.portrait{position:relative;justify-self:end;width:min(100%,380px)}
+.portrait img{width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 30%;border-radius:50%;filter:grayscale(.15)}
+.portrait svg{position:absolute;inset:-14% -14% auto auto;width:128%;max-width:none;height:auto;pointer-events:none;color:var(--fg);opacity:.16}
+.stats{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--fg)}
+.stat{padding:22px 18px 6px 0;display:grid;gap:4px;border-right:1px solid var(--line)}
+.stat+.stat{padding-left:18px}
+.stat:last-child{border-right:0}
+.stat b{font-size:clamp(30px,4.2vw,52px);line-height:1.05}
+.stat span{font-size:14px;color:var(--muted)}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.portrait{justify-self:start;width:min(70%,300px);order:-1}.stats{grid-template-columns:1fr}.stat{border-right:0;padding-left:0!important;padding-bottom:16px}.stat+.stat{border-top:1px solid var(--line)}}
+
+/* AI studio */
+.hero .stats .stat b small{font-size:.45em;font-weight:700;margin-left:2px}
+.proj{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:start;border-top:2px solid var(--fg);padding-top:36px}
+.proj+.proj{margin-top:80px}
+@media (max-width:900px){.proj{grid-template-columns:1fr;gap:28px}}
+.proj-media{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-width:0}
+.proj-media a,.proj-media figure{margin:0;position:relative;overflow:hidden;border-radius:6px;background:#111;display:block}
+.proj-media .main{grid-column:1/-1;aspect-ratio:16/9}
+.proj-media figure{aspect-ratio:16/10}
+.proj-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.proj-media a:hover img{transform:scale(1.03)}
+.proj-media .main .ov{position:absolute;inset:auto 0 0 0;padding:40px 16px 14px;background:linear-gradient(transparent,rgba(0,0,0,.82));color:#fff;display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px}
+.proj-media .main .ov i{width:40px;height:40px;border-radius:50%;background:#ff0000;display:grid;place-items:center;flex:none}
+.proj-body{display:grid;gap:20px;min-width:0}
+.proj-body .ttl{display:grid;gap:6px}
+.proj-body h3{font-size:clamp(26px,3.4vw,40px);font-weight:900;letter-spacing:-.02em}
+.proj-body h3 .en{font-family:var(--f-display);font-weight:500;font-size:.5em;letter-spacing:.14em;color:var(--muted);margin-left:10px}
+.proj-body .d{color:var(--muted);font-size:15.5px;max-width:58ch}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card)}
+.facts div{padding:12px 14px;display:grid;gap:2px;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{font-size:20px;font-variant-numeric:tabular-nums}
+.facts span{font-size:12px;color:var(--muted)}
+.contrib{display:grid;gap:10px;padding:16px;border-radius:8px;background:var(--fg);color:var(--bg)}
+.contrib .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.contrib .top span{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.contrib .top b{font-size:34px;line-height:1;font-variant-numeric:tabular-nums}
+.contrib .bar{height:8px;border-radius:4px;background:var(--mark)}
+.contrib ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.contrib li{font-size:13px;padding:3px 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--bg) 35%,transparent)}
+.tools{display:flex;flex-wrap:wrap;gap:6px}
+.btn{display:inline-flex;align-items:center;gap:10px;justify-self:start;padding:11px 18px 11px 14px;border-radius:8px;background:var(--fg);color:var(--bg);text-decoration:none;font-weight:700;font-size:15px}
+.btn:hover{background:var(--accent);color:#fff}
+.btn svg{width:22px;height:22px}
+
+/* process */
+.ptabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+.ptabs button{font:inherit;font-size:15px;font-weight:700;padding:9px 18px;border-radius:8px;border:1px solid var(--band-line);background:transparent;color:var(--band-fg);cursor:pointer}
+.ptabs button[aria-selected="true"]{background:var(--band-fg);color:var(--band)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:56px;counter-reset:st}
+.step{display:grid;grid-template-columns:200px 1fr;gap:32px;counter-increment:st;min-width:0}
+@media (max-width:860px){.step{grid-template-columns:1fr;gap:16px}}
+.step-h{display:grid;gap:8px;align-content:start;position:sticky;top:80px}
+@media (max-width:860px){.step-h{position:static}}
+.step-h::before{content:counter(st,decimal-leading-zero);font-family:var(--f-mono);font-size:13px;color:var(--mark)}
+.step-h h3{font-size:22px;font-weight:900}
+.step-h .tool{font-family:var(--f-mono);font-size:12px;color:var(--band-muted)}
+.step-b{display:grid;gap:16px;min-width:0}
+.step-b p{color:var(--band-muted);font-size:15px;max-width:62ch}
+.imgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px}
+.imgs.two{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));max-width:760px}
+.imgs figure{margin:0;display:grid;gap:6px}
+.imgs .ph{border-radius:6px;overflow:hidden;background:#fff}
+.imgs img{width:100%;cursor:zoom-in}
+.imgs figcaption{font-size:12px;color:var(--band-muted)}
+.prompt{position:relative;font-family:var(--f-mono);font-size:12.5px;line-height:1.7;background:#1b1b1a;color:#e7e7e2;border:1px solid var(--band-line);border-radius:8px;padding:16px 18px;white-space:pre-wrap;word-break:break-word;max-height:300px;overflow:auto}
+.prompt .k{color:#ffd2a0}
+.rule{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:8px;background:var(--mark);color:var(--mark-ink);font-size:14px;font-weight:500}
+.rule b{font-weight:900;white-space:nowrap}
+.panel[hidden]{display:none!important}
+.divider{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px;padding-block:56px 0}
+.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* ILODO case */
+.mountains{display:block;width:100%;height:auto;color:var(--band-line)}
+.case{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.case+.case{margin-top:96px}
+.case.rev .case-media{order:2}
+.case-media{border-radius:6px;overflow:hidden;background:#fff}
+.case-body{display:grid;gap:22px}
+.case-body h3{font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:-.02em}
+.case-body .kpis{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px;margin-top:6px}
+.kpi{display:grid;gap:2px;border-top:1px solid var(--band-line);padding-top:12px}
+.kpi b{font-size:clamp(28px,3.6vw,44px);line-height:1.1}
+.kpi span{font-size:13px;color:var(--band-muted)}
+.zero{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.zero b{font-size:clamp(48px,7vw,84px);line-height:1}
+@media (max-width:860px){.case{grid-template-columns:1fr;gap:28px}.case.rev .case-media{order:0}}
+
+.lookbook{margin-top:96px;display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.lookbook figure{margin:0;overflow:hidden;border-radius:4px;background:#ddd}
+.lookbook img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;transition:transform .5s ease}
+.lookbook figure:hover img{transform:scale(1.03)}
+.lb-a{grid-column:span 4;aspect-ratio:16/9}
+.lb-b,.lb-c{grid-column:span 2;position:relative}
+.lb-b img,.lb-c img{position:absolute;inset:0}
+.lb-d{grid-column:span 4;aspect-ratio:16/9}
+@media (max-width:700px){.lookbook{grid-template-columns:1fr 1fr}.lb-a,.lb-d{grid-column:span 2}.lb-b,.lb-c{grid-column:span 1;aspect-ratio:4/5}}
+
+/* video */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{font:inherit;font-size:14px;padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.platforms{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.pbtn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border:1px solid var(--line);border-radius:10px;text-decoration:none;background:var(--card);font-size:14px;font-weight:500}
+.pbtn:hover{border-color:var(--fg)}
+.pbtn svg{width:22px;height:22px;flex:none}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:20px}
+.vcard{display:grid;gap:10px;text-decoration:none;color:inherit;min-width:0}
+.vthumb{position:relative;aspect-ratio:9/16;border-radius:12px;overflow:hidden;background:#000}
+.vthumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+a.vcard:hover .vthumb img{transform:scale(1.04)}
+.vthumb .play{position:absolute;inset:auto auto 12px 12px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;opacity:0;transform:translateY(6px);transition:.25s}
+a.vcard:hover .play,a.vcard:focus-visible .play{opacity:1;transform:none}
+.vthumb .tag{position:absolute;top:10px;left:10px;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;background:rgba(0,0,0,.72);color:#fff;padding:3px 8px;border-radius:4px}
+.vthumb .views{position:absolute;right:10px;bottom:10px;font-size:13px;font-weight:700;background:var(--mark);color:var(--mark-ink);padding:2px 8px;border-radius:4px}
+.vcard h3{font-size:15px;font-weight:700;line-height:1.45}
+.vcard .meta{font-size:13px;color:var(--muted)}
+.vcard.wide .vthumb{aspect-ratio:16/9}
+.ph-thumb{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:18px;background:linear-gradient(160deg,#2a2622,#0d0d0c);color:#fff}
+.ph-thumb span{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:#ffd2a0}
+.ph-thumb b{font-size:19px;line-height:1.35;font-weight:900;word-break:keep-all}
+
+/* instagram */
+.ig-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:900px){.ig-grid{grid-template-columns:1fr}}
+.ig{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;min-width:0;color:var(--fg)}
+.ig-top{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);font-weight:700;font-size:15px}
+.ig-top span{font-family:var(--f-mono);font-weight:500;font-size:12px;color:var(--muted)}
+.ig-head{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;padding:20px 18px 6px}
+.ig-avatar{width:84px;height:84px;border-radius:50%;padding:3px;background:conic-gradient(from 200deg,#f9a24b,#e1306c,#a33bc2,#f9a24b)}
+.ig-avatar>div{width:100%;height:100%;border-radius:50%;background:#0d0d0d;border:3px solid var(--card);display:grid;place-items:center;overflow:hidden}
+.ig-avatar svg{width:70%;color:#fff}
+.ig-avatar img{width:100%;height:100%;object-fit:cover}
+.ig-stats{display:grid;grid-template-columns:repeat(3,1fr);text-align:center}
+.ig-stats b{display:block;font-size:18px;font-variant-numeric:tabular-nums}
+.ig-stats span{font-size:12px;color:var(--muted)}
+.ig-bio{padding:10px 18px 0;font-size:14px;line-height:1.6}
+.ig-bio strong{display:block}
+.ig-bio .cat{color:var(--muted)}
+.ig-actions{display:flex;gap:8px;padding:14px 18px}
+.ig-actions a,.ig-actions span{flex:1;text-align:center;font-size:14px;font-weight:700;padding:8px;border-radius:8px;background:var(--line);text-decoration:none}
+.ig-actions a.primary{background:#0a84ff;color:#fff}
+.ig-hl{display:flex;gap:16px;padding:4px 18px 14px;overflow-x:auto}
+.ig-hl div{display:grid;justify-items:center;gap:4px;font-size:11px;color:var(--muted);flex:none}
+.ig-hl i{width:56px;height:56px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-style:normal;font-size:12px;color:var(--fg);background:var(--bg)}
+.ig-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.ig-tabs span{display:grid;place-items:center;padding:10px;color:var(--muted)}
+.ig-tabs span.on{color:var(--fg);box-shadow:inset 0 -2px 0 var(--fg)}
+.ig-tabs svg{width:20px;height:20px}
+.ig-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.ig-tiles a,.ig-tiles div{position:relative;aspect-ratio:9/14;overflow:hidden;background:#000;display:block}
+.ig-tiles.sq a,.ig-tiles.sq div{aspect-ratio:1}
+.ig-tiles img{width:100%;height:100%;object-fit:cover}
+.ig-tiles .v{position:absolute;left:6px;bottom:4px;color:#fff;font-size:12px;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,.8)}
+.ig-note{font-size:13px;color:var(--muted);padding:12px 18px 16px;border-top:1px solid var(--line)}
+.yt-logo{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-body)!important;font-size:15px!important;font-weight:700!important;color:var(--fg)!important}
+.yt-logo svg{width:22px;height:22px}
+.yt-head{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding:20px 18px 4px}
+.yt-head strong{display:block;font-size:20px}
+.yt-head span{font-size:13px;color:var(--muted)}
+.yt-head p{font-size:14px;margin-top:4px}
+.yt-avatar{width:76px;height:76px;border-radius:50%;background:#ff0033;color:#fff;display:grid;place-items:center;font-weight:900;font-size:20px}
+.ig-actions a.yt-sub{background:var(--fg);color:var(--bg);border-radius:999px}
+.yt-tabs{display:flex;gap:22px;padding:0 18px;border-bottom:1px solid var(--line);font-size:14px;font-weight:500;color:var(--muted)}
+.yt-tabs span{padding:10px 0}
+.yt-tabs span.on{color:var(--fg);box-shadow:inset 0 -2px 0 var(--fg)}
+.yt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 10px;padding:14px}
+.yt-v{display:grid;gap:4px;text-decoration:none;min-width:0}
+.yt-v b{font-size:13px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.yt-v>span{font-size:12px;color:var(--muted)}
+.yt-th{position:relative;aspect-ratio:9/14;border-radius:8px;overflow:hidden;background:#000}
+.yt-th img{width:100%;height:100%;object-fit:cover}
+.yt-th .ph-thumb{padding:10px}
+.yt-th .ph-thumb b{font-size:13px}
+.yt-dur{position:absolute;right:6px;bottom:6px;font-size:10px;font-weight:700;background:rgba(0,0,0,.8);color:#fff;padding:1px 5px;border-radius:3px}
+
+/* works */
+.works{display:grid;grid-template-columns:repeat(12,1fr);gap:28px}
+.work{grid-column:span 6;display:grid;gap:16px;align-content:start;min-width:0}
+.work.full{grid-column:1/-1}
+.work.third{grid-column:span 4}
+.work .media{border-radius:8px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.work .media img{width:100%;cursor:zoom-in}
+.work h3{font-size:21px;font-weight:900;letter-spacing:-.01em}
+.work .fig{font-size:clamp(28px,3.4vw,40px);line-height:1.1}
+.work p.d{color:var(--muted);font-size:15px;max-width:58ch}
+.work .row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.work.split{grid-column:1/-1;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center;border-top:1px solid var(--line);padding-top:36px}
+.work.split.rev .media{order:2}
+.work.split .body{display:grid;gap:12px;align-content:center;min-width:0}
+.work.full+.work.split{margin-top:12px}
+@media (max-width:860px){.work,.work.third{grid-column:1/-1}.work.split{grid-template-columns:1fr;gap:20px}.work.split.rev .media{order:0}}
+.ipbars{display:grid;gap:8px;margin-top:4px}
+.ipbar{display:grid;grid-template-columns:70px 1fr 64px;gap:12px;align-items:center;font-size:13px}
+.ipbar .t{height:10px;background:var(--line);border-radius:5px;overflow:hidden}
+.ipbar .t i{display:block;height:100%;background:var(--fg);border-radius:5px}
+.ipbar b{text-align:right;font-variant-numeric:tabular-nums}
+.ipbar span{color:var(--muted);font-family:var(--f-mono);font-size:12px}
+
+/* design */
+.dgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.dgrid figure{margin:0;display:grid;gap:10px;min-width:0}
+.dgrid .ph{background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--band-line)}
+.dgrid img{width:100%;cursor:zoom-in}
+.dgrid figcaption{font-size:14px;color:var(--band-muted)}
+.dgrid figcaption b{color:var(--band-fg);font-weight:700;margin-right:8px}
+.dgrid .full{grid-column:1/-1}
+@media (max-width:760px){.dgrid{grid-template-columns:1fr}}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr}
+@media (max-width:900px){.about{grid-template-columns:1fr;gap:40px}}
+.timeline{list-style:none;margin:0;padding:0;position:relative;display:grid;gap:18px}
+.timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--fg)}
+.timeline li{position:relative;width:50%;padding:18px 40px 18px 0;display:grid;gap:4px;text-align:right;justify-items:end}
+.timeline li:nth-child(even){margin-left:50%;padding:18px 0 18px 40px;text-align:left;justify-items:start}
+.timeline li::before{content:"";position:absolute;right:-7px;top:26px;width:12px;height:12px;background:var(--fg)}
+.timeline li:nth-child(even)::before{right:auto;left:-7px}
+.timeline li::after{content:"";position:absolute;top:31px;right:6px;width:28px;height:2px;background:var(--line)}
+.timeline li:nth-child(even)::after{right:auto;left:6px}
+@media (min-width:761px){.timeline li+li{margin-top:-44px}}
+.timeline b{font-size:20px}
+.timeline p{max-width:40ch}
+.reveal-on .timeline li{opacity:0;transform:translateX(-48px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal-on .timeline li:nth-child(even){transform:translateX(48px)}
+.reveal-on .timeline li.in{opacity:1;transform:none}
+@media (max-width:760px){
+  .timeline::before{left:6px}
+  .timeline li,.timeline li:nth-child(even){width:auto;margin-left:0;padding:10px 0 10px 32px;text-align:left;justify-items:start}
+  .timeline li::before,.timeline li:nth-child(even)::before{left:0;right:auto}
+  .timeline li::after{display:none}
+  .reveal-on .timeline li,.reveal-on .timeline li:nth-child(even){transform:translateY(24px)}
+}
+@media (prefers-reduced-motion:reduce){.reveal-on .timeline li{opacity:1!important;transform:none!important}}
+.timeline .y{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+
+.timeline p{font-size:14px;color:var(--muted)}
+.plan{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:28px;display:grid;gap:16px;align-content:start}
+.plan h3{font-size:24px;font-weight:900}
+.plan p{font-size:15px;max-width:60ch}
+.plan ol{margin:0;padding:0;list-style:none;font-family:var(--f-mono);font-size:13px;display:grid;gap:6px;border-top:1px solid var(--line);padding-top:16px}
+.plan ol li{display:grid;grid-template-columns:52px 1fr;gap:8px}
+.plan ol li span:first-child{color:var(--accent);font-weight:500}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+
+/* contact */
+.contact{text-align:left}
+.contact h2{font-size:clamp(28px,5vw,56px);font-weight:900;letter-spacing:-.03em}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:40px}
+.ccard{border:1px solid var(--band-line);border-radius:10px;padding:18px 20px;display:grid;gap:6px}
+.ccard .eyebrow{font-size:11px}
+.ccard .v{font-size:18px;font-weight:700;user-select:all;word-break:break-all}
+.ccard button{justify-self:start;font:inherit;font-size:13px;background:transparent;color:var(--band-fg);border:1px solid var(--band-line);border-radius:6px;padding:4px 12px;cursor:pointer}
+.ccard button:hover{border-color:var(--band-fg)}
+footer{padding-block:28px;border-top:1px solid var(--band-line);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.9);display:grid;place-items:center;padding:max(24px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));cursor:zoom-out}
+.lightbox img{max-height:90vh;max-width:min(1400px,100%);object-fit:contain;border-radius:4px}
+.lightbox button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));font:inherit;font-size:14px;color:#fff;background:rgba(255,255,255,.12);border:0;border-radius:6px;padding:6px 14px;cursor:pointer}
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ilodo" viewBox="0 0 120 70">
+      <circle cx="24" cy="10" r="7" fill="currentColor"/>
+      <circle cx="96" cy="10" r="6.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M4 68V44a12 12 0 0 1 12-12h4a12 12 0 0 1 12 12v24h-7V46a3 3 0 0 0-6 0v22zM28 68V36a12 12 0 0 1 12-12h4a12 12 0 0 1 12 12v32h-7V38a3 3 0 0 0-6 0v30zM46 68V30a14 14 0 0 1 28 0v38h-7V32a3.5 3.5 0 0 0-7 0v36zM64 68V36a12 12 0 0 1 12-12h4a12 12 0 0 1 12 12v32h-7V38a3 3 0 0 0-6 0v30zM88 68V44a12 12 0 0 1 12-12h4a12 12 0 0 1 12 12v24h-7V46a3 3 0 0 0-6 0v22z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-yt" viewBox="0 0 24 24"><rect x="1" y="4.5" width="22" height="15" rx="4" fill="#ff0000"/><path d="M10 8.8v6.4l5.6-3.2z" fill="#fff"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><defs><linearGradient id="igg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#f9a24b"/><stop offset=".5" stop-color="#e1306c"/><stop offset="1" stop-color="#8a3ab9"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#igg)"/><circle cx="12" cy="12" r="4.4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="#fff"/></symbol>
+    <symbol id="i-tt" viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="6" fill="#111"/><path d="M13.2 5h2.4c.2 1.7 1.3 2.9 3 3.1v2.4c-1.1 0-2.1-.3-3-.9v4.9a4.4 4.4 0 1 1-4.4-4.4c.2 0 .4 0 .6.1v2.5a1.9 1.9 0 1 0 1.4 1.8z" fill="#fff"/></symbol>
+    <symbol id="i-wd" viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="6" fill="#00c4c4"/><path d="M5.5 8h2.2l1.4 5.4L10.8 8h2.4l1.7 5.4L16.3 8h2.2l-2.6 8.4h-2.2L12 11l-1.7 5.4H8.1z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<nav class="nav" aria-label="섹션 이동">
+  <div class="wrap">
+    <a class="brand" href="#top">KIM GEUN YEONG</a>
+    <ul>
+      <li><a class="l" href="#ai">AI 프로젝트</a></li>
+      <li><a class="l" href="#process">제작 과정</a></li>
+      <li><a class="l" href="#video">숏폼</a></li>
+      <li><a class="l" href="#instagram">채널</a></li>
+      <li><a class="l" href="#ilodo">일오도</a></li>
+      <li><a class="l" href="#works">작업</a></li>
+      <li><a class="l" href="#design">디자인</a></li>
+      <li><a class="l" href="#about">소개</a></li>
+      <li><a class="l" href="#contact">연락처</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1><span class="en">AI CONTENT PORTFOLIO</span>기획부터 생성, 편집까지 <span class="mark">끝까지</span> 책임집니다.</h1>
+        <div class="roles">
+          <span class="chip">AI 영상 생성</span><span class="chip">캐릭터 시트</span><span class="chip">스토리보드</span><span class="chip">프롬프트 설계</span><span class="chip">영상 편집</span><span class="chip">시리즈 기획</span>
+        </div>
+      </div>
+      <div class="portrait">
+        <img src="img/profile2.jpg" alt="김근영">
+        <svg viewBox="0 0 120 70" aria-hidden="true"><circle cx="20" cy="12" r="6" fill="currentColor"/><circle cx="102" cy="12" r="5.5" fill="none" stroke="currentColor" stroke-width=".6"/></svg>
+      </div>
+    </div>
+    <div class="stats" role="list">
+      <div class="stat" role="listitem"><b class="num">20<small>편</small></b><span>AI 드라마 8편 + 소울먹방 12편</span></div>
+      <div class="stat" role="listitem"><b class="num">100%</b><span>기획·생성·편집 기여도</span></div>
+      <div class="stat" role="listitem"><b class="num">820만+</b><span>SNS 누적 조회수</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="ai" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">AI Projects · 서울소스 1991</span>
+      <h2>직접 만든 AI 영상 시리즈</h2>
+      <p>캐릭터 설정부터 대본, 스토리보드, 영상 생성, 편집까지 전 과정을 직접 맡았습니다. 썸네일을 누르면 유튜브 재생목록으로 이동합니다.</p>
+    </div>
+
+    <article class="proj">
+      <div class="proj-media">
+        <a class="main" href="https://youtube.com/playlist?list=PLnHl2HILJvbwkaBUwvA6PHM5r21DrOiTF" target="_blank" rel="noopener"><img src="img/yt-teastwar.jpg" alt="AI 드라마 테이스트 워 유튜브 썸네일"><span class="ov"><i><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11L12.5 7z" fill="#fff"/></svg></i>재생목록 보기 · 8편</span></a>
+        <figure><img src="img/ai-soul-sheet.jpg" alt="주인공 소울 캐릭터 시트" data-zoom></figure>
+        <figure><img src="img/ai-sostown.jpg" alt="배경 아트워크 소스타운" data-zoom></figure>
+      </div>
+      <div class="proj-body">
+        <div class="ttl"><span class="eyebrow">AI 애니메이션 드라마</span><h3>테이스트 워<span class="en">TEAST WAR</span></h3></div>
+        <p class="d">맛을 빼앗는 악당 ‘노맛맨’에 맞서 고추 정령 ‘소울’이 서울의 미각을 지키는 연재형 애니메이션입니다. 회차별 줄거리와 기승전결을 짜고, 15~20개 씬으로 나눈 스토리보드를 바탕으로 4~5분 분량의 에피소드를 만들었습니다.</p>
+        <div class="facts"><div><b>8편</b><span>에피소드</span></div><div><b>16:9</b><span>영어 더빙 애니메이션</span></div><div><b>4~5분</b><span>회당 분량</span></div></div>
+        <div class="contrib"><div class="top"><span>Contribution</span><b>100%</b></div><div class="bar"></div><ul><li>세계관·캐릭터 기획</li><li>회차 시나리오</li><li>스토리보드</li><li>영상 생성</li><li>편집</li></ul></div>
+        <div class="tools"><span class="chip">Claude · 기획/대본/프롬프트</span><span class="chip">ChatGPT · 스토리보드 이미지</span><span class="chip">Higgsfield · 영상 생성</span></div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="proj-media">
+        <a class="main" href="https://youtube.com/playlist?list=PLnHl2HILJvbwviRdPjyShOJhWRWijTUpk" target="_blank" rel="noopener"><img src="img/ai-mk-base.jpg" alt="소울먹방 클레이 캐릭터 먹방 장면"><span class="ov"><i><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11L12.5 7z" fill="#fff"/></svg></i>재생목록 보기 · 12편</span></a>
+        <figure><img src="img/ai-mk-intro.jpg" alt="소울먹방 인트로 이미지" data-zoom></figure>
+        <figure><img src="img/ai-mk-board.jpg" alt="소울먹방 6컷 스토리보드" data-zoom></figure>
+      </div>
+      <div class="proj-body">
+        <div class="ttl"><span class="eyebrow">AI 캐릭터 먹방 ASMR</span><h3>소울먹방<span class="en">SOUL MUKBANG</span></h3></div>
+        <p class="d">고추 캐릭터 ‘소울’이 떡볶이, 냉면, 치킨을 먹는 스톱모션 클레이 질감의 먹방 ASMR 시리즈입니다. 실제 먹방 구도를 참고해 장면을 만들고, 음식이 먹는 만큼 자연스럽게 줄어들도록 초 단위 프롬프트를 설계했습니다.</p>
+        <div class="facts"><div><b>12편</b><span>에피소드</span></div><div><b>Clay</b><span>스톱모션 질감</span></div><div><b>ASMR</b><span>먹는 소리 중심</span></div></div>
+        <div class="contrib"><div class="top"><span>Contribution</span><b>100%</b></div><div class="bar"></div><ul><li>콘셉트 기획</li><li>캐릭터 시트</li><li>스토리보드</li><li>영상 생성</li><li>편집</li></ul></div>
+        <div class="tools"><span class="chip">이미지 생성 AI · 캐릭터/장면</span><span class="chip">Claude · 영문 프롬프트</span><span class="chip">영상 생성 AI · Gemini 등</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Workflow · AI 롱폼 제작법</span>
+      <h2>이렇게 만듭니다</h2>
+      <p>직접 정리한 제작 매뉴얼입니다. 핵심은 캐릭터 일관성입니다. 모든 단계에 캐릭터 시트를 기준으로 넣고, 외형 변형 금지 규칙을 프롬프트에 고정합니다.</p>
+    </div>
+    <div class="ptabs" role="tablist" aria-label="제작 과정 선택">
+      <button type="button" role="tab" id="tab-tw" aria-controls="pn-tw" aria-selected="true">테이스트 워 · 드라마</button>
+      <button type="button" role="tab" id="tab-mk" aria-controls="pn-mk" aria-selected="false">소울먹방 · ASMR</button>
+    </div>
+
+    <div class="panel" id="pn-tw" role="tabpanel" aria-labelledby="tab-tw">
+      <ol class="steps">
+        <li class="step"><div class="step-h"><h3>캐릭터 시트</h3><span class="tool">IMAGE AI</span></div>
+          <div class="step-b"><p>주인공 소울과 악당 노맛맨을 본모습, 인간 모습, 일상복·변신 버전으로 나눠 시트를 만들고, 배경인 소스타운 아트워크까지 설정했습니다.</p>
+            <div class="imgs"><figure><div class="ph"><img src="img/ai-soul-sheet2.jpg" alt="소울 인간 모습 캐릭터 시트" data-zoom loading="lazy"></div><figcaption>소울 · 인간 모습</figcaption></figure><figure><div class="ph"><img src="img/ai-nomat-sheet.jpg" alt="노맛맨 본모습 캐릭터 시트" data-zoom loading="lazy"></div><figcaption>노맛맨 · 본모습</figcaption></figure><figure><div class="ph"><img src="img/ai-nomat-human.jpg" alt="노맛맨 인간 모습 캐릭터 시트" data-zoom loading="lazy"></div><figcaption>노맛맨 · 인간 모습</figcaption></figure></div></div></li>
+        <li class="step"><div class="step-h"><h3>회차 기획</h3><span class="tool">CLAUDE</span></div>
+          <div class="step-b"><p>요약 줄거리, 구체화 줄거리, 기승전결 순으로 정리해 보고합니다. 이전 회차를 예시로 주고 다음 회차 방향을 4가지 제안받은 뒤 골라서 다듬습니다.</p>
+            <div class="prompt"><span class="k">[EP05 매운맛 반격]</span> 노맛맨이 사라진 뒤에도 도시 한쪽엔 미각을 되찾지 못한 사각지대가 남아있다. 소울은 고향 소스타운으로 돌아가 재료를 조합하는 실험 끝에 새로운 필살기 "핫카레 펀치"를 스스로 개발해낸다…
+
+<span class="k">[다음 회차 기획 프롬프트]</span> 6화는 노맛맨이 정령 버전으로 등장하자, 소울이가 몰라보고 인간으로서 호감을 느끼는 내용이 주로 구성되었으면 해. 스토리 방향 4가지 제안해주고 거기서 마음에 드는걸로 내가 디벨롭할게.</div></div></li>
+        <li class="step"><div class="step-h"><h3>씬 구성</h3><span class="tool">CLAUDE</span></div>
+          <div class="step-b"><p>한 회를 15~20개 씬, 씬당 15초로 나눕니다. 씬마다 포즈, 표정, 대사, 영문 키워드를 함께 적어 이미지와 영상 생성에 그대로 씁니다.</p>
+            <div class="prompt"><span class="k">SCENE 1 신난 소울</span>
+포즈: 양팔 번쩍 위로 든 채 하늘을 나는 자세, 다리는 뒤로 살짝 뻗어 비행감 강조
+표정: 눈 크게 뜨고 반짝, 입 크게 벌려 활짝 웃는 자신만만한 표정
+소울 “그래! 어쨌든 내가 다 해결했다!"
+키워드: flying pose, arms raised triumphantly, wide confident grin, sparkling eyes, cape fluttering upward</div></div></li>
+        <li class="step"><div class="step-h"><h3>스토리보드 이미지</h3><span class="tool">CHATGPT</span></div>
+          <div class="step-b"><p>캐릭터 시트와 얼굴 레퍼런스를 함께 넣어 씬마다 한 장씩, 총 20장을 만듭니다. 글자 오류나 얼굴 변형이 생긴 컷은 다시 손봅니다. 20장이면 4~5분 영상이 나옵니다.</p>
+            <div class="imgs two"><figure><div class="ph"><img src="img/ai-tw-board.jpg" alt="테이스트 워 스토리보드 이미지" data-zoom loading="lazy"></div><figcaption>씬별 스토리보드</figcaption></figure></div></div></li>
+        <li class="step"><div class="step-h"><h3>영상 프롬프트</h3><span class="tool">CLAUDE</span></div>
+          <div class="step-b"><p>스토리보드를 보여 주고 16:9 애니메이션, 영어 오디오 조건으로 타임코드별 영상 프롬프트를 받습니다. 카메라, 대사, 효과음까지 한 번에 정리됩니다.</p>
+            <div class="imgs"><figure><div class="ph"><img src="img/ai-prompt3.jpg" alt="영상 프롬프트 요청 화면" data-zoom loading="lazy"></div></figure><figure><div class="ph"><img src="img/ai-prompt2.jpg" alt="타임코드별 영상 프롬프트 결과" data-zoom loading="lazy"></div></figure><figure><div class="ph"><img src="img/ai-prompt1.jpg" alt="이미지 레퍼런스 포함 프롬프트" data-zoom loading="lazy"></div></figure></div></div></li>
+        <li class="step"><div class="step-h"><h3>영상 생성·편집</h3><span class="tool">HIGGSFIELD</span></div>
+          <div class="step-b"><p>스토리보드, 인트로, 캐릭터 시트를 각각 이미지 번호와 설명을 붙여 넣고 영문 프롬프트를 붙여 15초 단위로 생성합니다. 생성된 컷을 이어 편집해 한 회를 완성합니다.</p>
+            <div class="imgs two"><figure><div class="ph"><img src="img/ai-tool.jpg" alt="영상 생성 툴 작업 화면" data-zoom loading="lazy"></div><figcaption>image 1# storyboard · image 2# intro · image 3# character sheet</figcaption></figure></div></div></li>
+      </ol>
+    </div>
+
+    <div class="panel" id="pn-mk" role="tabpanel" aria-labelledby="tab-mk" hidden>
+      <ol class="steps">
+        <li class="step"><div class="step-h"><h3>캐릭터 시트</h3><span class="tool">IMAGE AI</span></div>
+          <div class="step-b"><p>2D 캐릭터 그림을 스톱모션 점토 질감의 3D로 옮기고 앞·옆·뒤 시트를 만듭니다. 이어서 하이·로우·정면 앵글 9분할 시트와 감정별 시트를 추가로 뽑습니다.</p>
+            <div class="imgs"><figure><div class="ph"><img src="img/ai-chili-2d.jpg" alt="원본 2D 고추 캐릭터" data-zoom loading="lazy"></div><figcaption>원본 캐릭터</figcaption></figure><figure><div class="ph"><img src="img/ai-clay-sheet.jpg" alt="클레이 질감 캐릭터 시트" data-zoom loading="lazy"></div><figcaption>클레이 캐릭터 시트</figcaption></figure><figure><div class="ph"><img src="img/ai-angle9.jpg" alt="앵글별 9분할 시트" data-zoom loading="lazy"></div><figcaption>앵글 9분할</figcaption></figure><figure><div class="ph"><img src="img/ai-angle9-angry.jpg" alt="감정 분노 9분할 시트" data-zoom loading="lazy"></div><figcaption>감정 · 분노</figcaption></figure></div>
+            <div class="prompt"><span class="k">기본)</span> 이 사진 속 캐릭터의 캐릭터 시트를 만들거야. 앞, 옆, 뒤가 정확히 나왔으면 좋겠고 캐릭터의 요소들이 절대 변경되면 안 돼.
+<span class="k">특징)</span> 빨간색 몸통, 머리 위 초록색 과일 꼭지, 메롱하는 표정, 썬글라스.
+<span class="k">원하는 느낌)</span> 3D 모양, 스톱모션에 활용되는 점토 느낌의 텍스쳐.</div></div></li>
+        <li class="step"><div class="step-h"><h3>기본 이미지</h3><span class="tool">IMAGE AI</span></div>
+          <div class="step-b"><p>실제 먹방 사진의 구도와 배경은 그대로 두고 인물 자리에 캐릭터를 넣습니다. 음식은 원하는 메뉴로 바꾸고, 캐릭터 비율과 외형은 시트 그대로 유지합니다.</p>
+            <div class="imgs two"><figure><div class="ph"><img src="img/ai-mk-intro.jpg" alt="생성된 먹방 기본 이미지" data-zoom loading="lazy"></div><figcaption>캐릭터 시트 + 레퍼런스 구도 → 기본 이미지</figcaption></figure></div></div></li>
+        <li class="step"><div class="step-h"><h3>스토리보드</h3><span class="tool">IMAGE AI</span></div>
+          <div class="step-b"><p>기본 이미지를 토대로 캐릭터가 음식을 천천히 음미하고 다 먹어 버리는 흐름을 6컷 스토리보드로 만듭니다.</p>
+            <div class="imgs two"><figure><div class="ph"><img src="img/ai-mk-board.jpg" alt="먹방 6컷 스토리보드" data-zoom loading="lazy"></div></figure><figure><div class="ph"><img src="img/ai-mk-base.jpg" alt="완성 장면" data-zoom loading="lazy"></div></figure></div></div></li>
+        <li class="step"><div class="step-h"><h3>초 단위 영문 프롬프트</h3><span class="tool">CLAUDE</span></div>
+          <div class="step-b"><p>원하는 장면을 한국어로 설명하고, 바로 붙여 넣을 수 있게 3초 단위로 나눈 영문 프롬프트를 받습니다. 캐릭터 규칙과 음식 규칙을 맨 위에 고정합니다.</p>
+            <div class="rule"><b>RULE</b><span>The character sheet is the ONLY source of truth for appearance. Food disappears ONLY because the character eats it.</span></div>
+            <div class="prompt"><span class="k">TITLE:</span> 15-Second Stop-Motion Clay ASMR Mukbang Video Prompt
+<span class="k">STYLE:</span> High-quality stop-motion clay animation, cinematic food ASMR, cozy dark studio lighting, tactile handmade clay texture
+
+<span class="k">[0s - 3s] INTRO SHOT</span>
+Wide shot. The chili mascot sits behind a huge clay tteokbokki pan and a tray of fried chicken. Steam slowly rises. Camera slowly pushes in.
+
+<span class="k">[6s - 9s] FRIED CHICKEN DIPPED INTO TTEOKBOKKI</span>
+The mascot dips the chicken deep into the sauce. Loud crispy bite ASMR. Part of the chicken is visibly missing.
+
+<span class="k">[12s - 15s] FOOD ALMOST GONE</span>
+Only small sauce traces remain. The mascot gives a proud thumbs up toward camera.</div></div></li>
+        <li class="step"><div class="step-h"><h3>영상 생성·편집</h3><span class="tool">VIDEO AI</span></div>
+          <div class="step-b"><p>스토리보드, 인트로, 캐릭터 시트를 번호와 설명을 붙여 넣고 영문 프롬프트를 붙여 생성합니다. 15초 클립을 이어 붙여 한 편으로 편집합니다.</p>
+            <div class="imgs two"><figure><div class="ph"><img src="img/ai-tool.jpg" alt="영상 생성 툴 작업 화면" data-zoom loading="lazy"></div><figcaption>image 1# storyboard · image 2# intro · image 3# character sheet</figcaption></figure></div></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider">Other works · 브랜드 운영과 마케팅</div></div>
+
+
+<section id="video">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Short-form · 1일 1숏폼</span>
+      <h2>SNS 숏폼 영상</h2>
+      <p>옷이 만들어지는 과정을 공개한 브랜드 숏폼과, 드라마·애니메이션 리뷰 콘텐츠를 운영하고 있습니다. 썸네일을 누르면 원본 영상으로 이동합니다.</p>
+    </div>
+    <div class="platforms" id="platforms"></div>
+    <div class="filters" role="group" aria-label="영상 분류">
+      <button type="button" data-f="all" aria-pressed="true">전체</button>
+      <button type="button" data-f="ilodo" aria-pressed="false">일오도 브랜드 제작기</button>
+      <button type="button" data-f="review" aria-pressed="false">리뷰 콘텐츠</button>
+    </div>
+    <div class="vgrid" id="vgrid"></div>
+  </div>
+</section>
+
+<section id="instagram" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Instagram</span>
+      <h2>운영 중인 계정을 한눈에</h2>
+      <p>브랜드 인스타그램과 리뷰 유튜브 채널을 함께 운영하고 있습니다. 카드를 누르면 각 채널로 이동합니다.</p>
+    </div>
+    <div class="ig-grid" id="ig"></div>
+  </div>
+</section>
+
+<section class="band" id="ilodo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Case · ILODO 일월오봉도 브랜드</span>
+      <h2>당신의 하루를 왕으로 만들어 드리겠습니다</h2>
+      <p>조선시대 왕의 자리 뒤에 늘 걸려 있던 일월오봉도를 일상복과 가방으로 옮긴 1인 브랜드입니다. 로고, 도식화, 촬영, 상세페이지, SNS 운영까지 직접 했고 광고비는 쓰지 않았습니다.</p>
+    </div>
+
+    <article class="case">
+      <div class="case-media"><img src="img/wadiz.jpg" alt="와디즈 일월오봉도 고급 캔버스 백 펀딩 페이지, 2,494% 달성" data-zoom></div>
+      <div class="case-body">
+        <span class="eyebrow">첫 번째 제품 · 와디즈</span>
+        <h3>일월오봉도 고급 캔버스 백</h3>
+        <div class="kpis">
+          <div class="kpi"><b class="num">2,494%</b><span>펀딩 달성률</span></div>
+          <div class="kpi"><b class="num">12,471,000원</b><span>누적 판매액</span></div>
+        </div>
+        <p class="muted">릴스·쇼츠 등 자체 제작 콘텐츠만으로 만든 결과입니다.</p>
+      </div>
+    </article>
+
+    <article class="case rev">
+      <div class="case-media"><img src="img/jeans.jpg" alt="일월오봉도 사이드 프린팅 세미와이드 청바지 착용 사진" data-zoom></div>
+      <div class="case-body">
+        <span class="eyebrow">두 번째 제품 · 2024.08.30 – 09.30</span>
+        <h3>일월오봉도 사이드 프린팅 세미와이드 청바지</h3>
+        <div class="kpis">
+          <div class="kpi"><b class="num">11,909,000원</b><span>모인 금액 (목표 500,000원)</span></div>
+          <div class="kpi"><b class="num">2,381%</b><span>달성률 · 후원자 182명</span></div>
+        </div>
+        <div class="zero"><b class="num"><span class="mark">0원</span></b><span class="muted">1인 기업이라 인건비도 없는 홍보비</span></div>
+      </div>
+    </article>
+
+    <div class="lookbook" aria-label="일오도 룩북">
+      <figure class="lb-a"><img src="img/look-three.jpg" alt="룩북: 네이비 셋업과 캔버스 백 세 가지 포즈" data-zoom loading="lazy"></figure>
+      <figure class="lb-b"><img src="img/look2.jpg" alt="룩북: 블랙 캔버스 백을 든 정면 컷" data-zoom loading="lazy"></figure>
+      <figure class="lb-c"><img src="img/look1.jpg" alt="룩북: 앉은 자세의 블랙 캔버스 백" data-zoom loading="lazy"></figure>
+      <figure class="lb-d"><img src="img/look-pair.jpg" alt="룩북: 블랙과 아이보리 캔버스 백 함께 든 컷" data-zoom loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Marketing works</span>
+      <h2>숏폼이 전부는 아니니까</h2>
+      <p>상세페이지, 행사 홍보물, 캐릭터, 인스타툰, 굿즈 판매까지. 채널마다 맞는 방식으로 팔았습니다.</p>
+    </div>
+    <div class="works">
+      <article class="work full">
+        <div class="media"><img src="img/detail-full.jpg" alt="직접 제작한 상세페이지 모음, 28장 이상 제작" data-zoom loading="lazy"></div>
+        <div class="row"><b class="fig num">28장+</b><h3>플랫폼에 맞춘 상세페이지 제작</h3></div>
+        <p class="d">판매 채널마다 다른 문법에 맞춰 일오도 가방·의류와 농산물 상세페이지를 기획하고 디자인했습니다.</p>
+      </article>
+
+      <article class="work split">
+        <div class="media"><img src="img/ip-plan.jpg" alt="패션 IP 센터 서포터즈 영상 기획안 일부" data-zoom loading="lazy"></div>
+        <div class="body">
+          <span class="eyebrow">영상 기획·출연</span>
+          <h3>패션 IP 센터 서포터즈</h3>
+          <b class="fig num">7만 뷰+</b>
+          <p class="d">영상 5편을 기획하고 출연했습니다. 콘티부터 내레이션까지 직접 썼습니다.</p>
+          <div class="ipbars" id="ipbars"></div>
+        </div>
+      </article>
+
+      <article class="work split rev">
+        <div class="media"><img src="img/edutech.jpg" alt="Edutech ASIA 테이블보와 배너 디자인" data-zoom loading="lazy"></div>
+        <div class="body">
+          <span class="eyebrow">행사 홍보물 디자인</span>
+          <h3>Edutech ASIA 테이블보·배너</h3>
+          <p class="d">진스토리코리아의 GENAVI·Menabi 해외 박람회 부스 테이블보, 롤업 배너, 이벤트 보드를 디자인했습니다.</p>
+        </div>
+      </article>
+
+      <article class="work">
+        <div class="media"><img src="img/brainy.jpg" alt="진스토리코리아 캐릭터 브레니" data-zoom loading="lazy"></div>
+        <h3>캐릭터 개발부터 마케팅 적용까지</h3>
+        <p class="d">뇌를 모티브로 한 진스토리코리아 캐릭터 ‘브레니’를 만들고, GENAVI 콘텐츠 전반에 들어가는 동작 세트로 확장했습니다.</p>
+      </article>
+      <article class="work">
+        <div class="media"><img src="img/brainy-set.jpg" alt="브레니 캐릭터 동작 세트" data-zoom loading="lazy"></div>
+        <h3>브레니 활용 일러스트 세트</h3>
+        <p class="d">학습, 검사, 결과지 등 서비스 흐름에 맞춘 30여 종의 장면을 그렸습니다.</p>
+      </article>
+
+      <article class="work full">
+        <div class="media"><img src="img/toon-strip.jpg" alt="인스타툰 연재 컷" data-zoom loading="lazy"></div>
+        <div class="row"><b class="fig num">6개월 · 1,000 팔로워</b><h3>인스타툰·짤툰 연재</h3></div>
+      </article>
+
+      <article class="work third">
+        <div class="media"><img src="img/goods.jpg" alt="리을영 캐릭터 아크릴 키링 굿즈" data-zoom loading="lazy"></div>
+        <div class="row"><b class="fig num">200만 원+</b></div>
+        <h3>툰 계정 → 굿즈 판매</h3>
+        <p class="d">툰 캐릭터로 아크릴 키링 등 굿즈를 만들어 판매했습니다.</p>
+      </article>
+      <article class="work third">
+        <div class="media"><img src="img/toon-3d.jpg" alt="3D 스타일 인스타툰" data-zoom loading="lazy"></div>
+        <h3>콘텐츠가 바뀌어도 조회수는 그대로</h3>
+        <p class="d">툰을 숏츠로 옮겨도 편당 1.3만~1.4만 회가 나왔습니다.</p>
+      </article>
+      <article class="work third">
+        <div class="media"><img src="img/twitter.jpg" alt="트위터 아이돌 굿즈 수량조사와 선입금 폼" data-zoom loading="lazy"></div>
+        <div class="row"><b class="fig num">3,210,600원</b></div>
+        <h3>고2 때 시작한 X(트위터) 굿즈 마케팅</h3>
+        <p class="d">아이돌 인형 굿즈를 디자인하고 수량조사부터 선입금, 배송까지 직접 진행했습니다.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="design">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Design · Brand report</span>
+      <h2>화려함 안에 정제된 힙</h2>
+      <p>일오도의 무드보드, 로고, 도식화 작업입니다. 전통 문양을 스트리트 실루엣 위에 올리는 방향을 잡았습니다.</p>
+    </div>
+    <div class="dgrid">
+      <figure class="full"><div class="ph"><img src="img/mood.jpg" alt="일오도 무드보드와 컬러 팔레트" data-zoom loading="lazy"></div><figcaption><b>Mood board</b>블랙, 브라운, 아이보리, 더스티 블루</figcaption></figure>
+      <figure class="full"><div class="ph"><img src="img/logos.jpg" alt="로고 디자인 작업 모음" data-zoom loading="lazy"></div><figcaption><b>Logo design</b>일오도 로고 변천 과정과 외주 로고 작업</figcaption></figure>
+      <figure class="full"><div class="ph"><img src="img/schematic.jpg" alt="캔버스 백, 재킷, 탑, 데님 도식화" data-zoom loading="lazy"></div><figcaption><b>Schematic drawing</b>캔버스 백 규격도(380×305mm)와 의류 도식화</figcaption></figure>
+      <figure class="full"><div class="ph"><img src="img/schematic2.jpg" alt="베스트, 팬츠, 셔츠 도식화" data-zoom loading="lazy"></div><figcaption><b>Schematic drawing</b>매듭 단추 디테일의 베스트·팬츠·셔츠</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">About · 2002.01.11</span>
+      <h2>김근영 <span class="muted" style="font-weight:400">일오도 CEO</span></h2>
+      <p>도식화, 제품 디자인, 로고, SNS 콘텐츠 기획, 상세페이지와 배너, 카탈로그, 캐릭터 디자인을 해 왔습니다.</p>
+    </div>
+    <div class="about">
+      <ol class="timeline">
+        <li><span class="y">2025 – 2026</span><b>소스코 재직</b><p>AI 마케팅, 콘텐츠 제작, AI 활용 업무, 기획 및 편집</p></li>
+        <li><span class="y">2023 –</span><b>일오도 운영</b><p>로고, 도식화, 제품 디자인, 상세페이지, SNS 마케팅, 고객 응대</p></li>
+        <li><span class="y">2023 – 2024</span><b>진스토리코리아 재직</b><p>캐릭터·일러스트·아이콘, 유튜브 썸네일, 현수막, 영상 디자인</p></li>
+        <li><span class="y">2022</span><b>외주 (프리랜서)</b><p>로고 디자인, 광고 배너 디자인</p></li>
+        <li><span class="y">2020 – 2021</span><b>리을영 운영</b><p>문구류 20여 종 디자인·발주 총괄, SNS 마케팅, 회계, 포장·배송</p></li>
+        <li><span class="y">2020</span><b>경기대학교 입체조형학 입학</b></li>
+        <li><span class="y">2018</span><b>아이돌 비공식 굿즈 판매</b><p>캐릭터, 스티커, 금속뱃지, 슬로건 제작과 계정 운영</p></li>
+        <li><span class="y">2017 – 2019</span><b>아이돌 인형 판매</b><p>인형·스티커 도안, 샘플 발주, 마케팅과 C/S</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h2 style="margin-top:14px">봐 주셔서 <span class="mark">감사합니다.</span></h2>
+    <div class="cards">
+      <div class="ccard"><span class="eyebrow">Email</span><span class="v" id="c-mail">csgilove3@naver.com</span><button type="button" data-copy="c-mail">주소 복사</button></div>
+      <div class="ccard"><span class="eyebrow">Phone</span><span class="v" id="c-tel">010-8393-4507</span><button type="button" data-copy="c-tel">번호 복사</button></div>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap muted"><span>© 2026 Kim Geun Yeong</span><span>AI Content &amp; Brand Portfolio</span></div>
+  </footer>
+</section>
+
+<div class="lightbox" id="lb" hidden><button type="button" id="lb-close">닫기</button><img id="lb-img" alt=""></div>
+
+<script>
+/* ==========================================================
+   링크 설정 — 여기만 고치면 사이트 전체에 반영됩니다.
+   비워 둔 링크("")는 버튼이 숨겨집니다.
+   유튜브 영상은 youtubeId를 넣으면 썸네일과 링크가 자동으로 잡힙니다
+   (직접 호스팅할 때. 미리보기에서는 아래 thumb 이미지가 대신 보입니다).
+   ========================================================== */
+const LINKS = {
+  instagram: "https://www.instagram.com/official_ilodo/",
+  toonInstagram: "",
+  youtube: "https://www.youtube.com/@todaysdori",
+  tiktok: "",
+  wadiz: ""
+};
+
+const VIDEOS = [
+  { cat:"review", title:"재혼황후 2~4화 리뷰 + 리액션", tag:"LONG", views:"5.5천", thumb:"", url:"https://www.youtube.com/watch?v=NRNCsVxUSdA", youtubeId:"" },
+  { cat:"review", title:"멕켄나=최대훈", tag:"SHORTS", views:"1.6천", thumb:"", url:"https://www.youtube.com/shorts/bCCNNRyGhgY", youtubeId:"" },
+  { cat:"review", title:"귀족영애가 노예한테 한마디 했더니 감옥감", tag:"SHORTS", views:"1.6천", thumb:"", url:"https://www.youtube.com/shorts/F9_gbiFgumA", youtubeId:"" },
+  { cat:"review", title:"원가온은 유명한 가오쟁이다", tag:"SHORTS", views:"1.6천", thumb:"img/yt-vYHw07uR46U.jpg", url:"https://www.youtube.com/shorts/vYHw07uR46U", youtubeId:"" },
+  { cat:"review", title:"하인리 이종석? 완벽한데..?", tag:"SHORTS", views:"1.5천", thumb:"", url:"https://www.youtube.com/shorts/SRValDg2zcU", youtubeId:"" },
+  { cat:"review", title:"재벌이 서민에게 사랑에 빠지는 이유", tag:"SHORTS", views:"1.4천", thumb:"img/yt-iVI3yq-fvIM.jpg", url:"https://www.youtube.com/shorts/iVI3yq-fvIM", youtubeId:"" },
+  { cat:"review", title:"제 최애 말랑이를 소개합니다", tag:"SHORTS", views:"1.4천", thumb:"img/yt-JTHiqODz9MA.jpg", url:"https://www.youtube.com/shorts/JTHiqODz9MA", youtubeId:"" },
+  { cat:"review", title:"로판에 한글이 웬말이오", tag:"SHORTS", views:"1.3천", thumb:"", url:"https://www.youtube.com/shorts/s2WMErn5Ehg", youtubeId:"" },
+  { cat:"review", title:"원가온은 유명한 싸가지다", tag:"SHORTS", views:"1.3천", thumb:"img/yt-6w51EWg9B_8.jpg", url:"https://www.youtube.com/shorts/6w51EWg9B_8", youtubeId:"" },
+  { cat:"ilodo", title:"보부상 모자, 목화솔의 유래를 아시나요?", tag:"2025.05", views:"38.2만", thumb:"img/ig-DJ2D8VsBJth.jpg", url:"https://www.instagram.com/official_ilodo/reel/DJ2D8VsBJth/", youtubeId:"" },
+  { cat:"ilodo", title:"이렇게 힙한 전통모자가 있는지 알고 있었어?", tag:"2025.08", views:"30.5만", thumb:"img/ig-DN5xeEJAcmt.jpg", url:"https://www.instagram.com/official_ilodo/reel/DN5xeEJAcmt/", youtubeId:"" },
+  { cat:"ilodo", title:"졸업전시 준비하다가 질식사 할 뻔한 사연", tag:"2025.07", views:"23.4만", thumb:"img/ig-DMrkJzPhYoN.jpg", url:"https://www.instagram.com/official_ilodo/reel/DMrkJzPhYoN/", youtubeId:"" },
+  { cat:"ilodo", title:"시스루 원단 재단 쉽게 하는 방법", tag:"2025.08", views:"13만", thumb:"img/ig-DM7W6pLBXJ9.jpg", url:"https://www.instagram.com/official_ilodo/reel/DM7W6pLBXJ9/", youtubeId:"" },
+  { cat:"ilodo", title:"옷에 누가 이걸 100개 넘게 붙여요", tag:"2025.07", views:"6.2만", thumb:"img/ig-DMhQsqphJ66.jpg", url:"https://www.instagram.com/official_ilodo/reel/DMhQsqphJ66/", youtubeId:"" },
+  { cat:"ilodo", title:"교수님들이 어렵다며 뜯어 말리셨던 그 원단", tag:"2025.07", views:"4.8만", thumb:"img/ig-DMw1ErgBnlI.jpg", url:"https://www.instagram.com/official_ilodo/reel/DMw1ErgBnlI/", youtubeId:"" },
+  { cat:"ilodo", title:"긴급하게 드릴 말씀이 있습니다", tag:"2025.09", views:"3.9만", thumb:"img/ig-DO0qbf2AV56.jpg", url:"https://www.instagram.com/official_ilodo/reel/DO0qbf2AV56/", youtubeId:"" },
+  { cat:"ilodo", title:"기다리고 기다리던 모델 피팅 날", tag:"2025.08", views:"3.2만", thumb:"img/ig-DNdcHCWB-CH.jpg", url:"https://www.instagram.com/official_ilodo/reel/DNdcHCWB-CH/", youtubeId:"" },
+  { cat:"ilodo", title:"드디어 졸업전시 막바지 과정", tag:"2025.09", views:"2.5만", thumb:"img/ig-DOJmvVygahu.jpg", url:"https://www.instagram.com/official_ilodo/reel/DOJmvVygahu/", youtubeId:"" },
+  { cat:"ilodo", title:"패션 디자이너 겸 1인기업 대표가 가장 뿌듯한 순간", tag:"2025.08", views:"2.4만", thumb:"img/ig-DNJJymohLws.jpg", url:"https://www.instagram.com/official_ilodo/reel/DNJJymohLws/", youtubeId:"" },
+  { cat:"ilodo", title:"패디과 졸업전시 룩북 촬영 비하인드", tag:"2025.08", views:"2.2만", thumb:"img/ig-DNplM0bB2HA.jpg", url:"https://www.instagram.com/official_ilodo/reel/DNplM0bB2HA/", youtubeId:"" },
+  { cat:"ilodo", title:"말도 안 돼, 디자인 한복이 이렇게 예쁘다고?", tag:"2025.08", views:"2.2만", thumb:"img/ig-DNP1IKOBXwS.jpg", url:"https://www.instagram.com/official_ilodo/reel/DNP1IKOBXwS/", youtubeId:"" },
+  { cat:"ilodo", title:"우당탕탕 브랜드 제작기", tag:"2024", views:"30.7만", thumb:"img/reel7.jpg", url:"", youtubeId:"" },
+  { cat:"ilodo", title:"실크스크린 대량 인쇄 꿀팁 3가지", tag:"D+110", views:"6.6만", thumb:"img/reel8.jpg", url:"", youtubeId:"" },
+  { cat:"ilodo", title:"브랜드를 키우려면 온 마을이 필요하다", tag:"D+238", views:"6.4만", thumb:"img/d238.jpg", url:"", youtubeId:"" },
+  { cat:"ilodo", title:"드디어 배송 완료!", tag:"D+113", views:"4.5만", thumb:"img/reel4.jpg", url:"", youtubeId:"" },
+  { cat:"ilodo", title:"내가 연말에 꼭 하는 것", tag:"D+115", views:"2.1만", thumb:"img/reel2.jpg", url:"", youtubeId:"" },
+  { cat:"ilodo", title:"GOOD BYE 2023", tag:"2023", views:"1.8만", thumb:"img/reel1.jpg", url:"", youtubeId:"" },
+  { cat:"ilodo", title:"브랜드 운영자인데, 자사 제품 모델도 합니다", tag:"D+239", views:"8,124", thumb:"img/d239.jpg", url:"", youtubeId:"" }
+];
+/* 조회수 높은 순으로 자동 정렬 */
+const viewNum = v => { const t = String(v||"").replace(/,/g,""); return t.endsWith("만") ? parseFloat(t)*10000 : t.endsWith("천") ? parseFloat(t)*1000 : (parseFloat(t)||0); };
+VIDEOS.sort((x,y) => viewNum(y.views) - viewNum(x.views));
+
+const IP_VIDEOS = [ ["EP 01",5108],["EP 02",9431],["EP 03",13000],["EP 04",28000],["EP 05",17000] ];
+/* ========================================================== */
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const playSvg = '<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11L12.5 7z" fill="#111"/></svg>';
+
+// platform buttons
+const P = [
+  ["instagram","i-ig","Instagram","@official_ilodo"],
+  ["youtube","i-yt","YouTube","@todaysdori"],
+  ["tiktok","i-tt","TikTok","@official_ilodo"],
+  ["wadiz","i-wd","Wadiz","펀딩 페이지"]
+];
+$("#platforms").innerHTML = P.filter(p => LINKS[p[0]]).map(p =>
+  `<a class="pbtn" href="${esc(LINKS[p[0]])}" target="_blank" rel="noopener"><svg><use href="#${p[1]}"/></svg>${p[2]} <span class="muted" style="font-weight:400">${p[3]} ↗</span></a>`).join("");
+
+// videos
+function videoHref(v){
+  if (v.url) return v.url;
+  if (v.youtubeId) return "https://youtube.com/shorts/" + v.youtubeId;
+  return v.cat === "toon" ? (LINKS.youtube || LINKS.toonInstagram) : (LINKS.instagram || LINKS.youtube || LINKS.tiktok);
+}
+function renderVideos(f){
+  $("#vgrid").innerHTML = VIDEOS.filter(v => f === "all" || v.cat === f).map(v => {
+    const href = videoHref(v);
+    const yt = v.youtubeId ? `https://i.ytimg.com/vi/${esc(v.youtubeId)}/oardefault.jpg` : "";
+    const img = (yt || v.thumb) ? `<img src="${esc(yt || v.thumb)}" ${yt ? `onerror="this.onerror=null;this.src='${esc(v.thumb)}'"` : ""} alt="" loading="lazy">` : `<div class="ph-thumb"><span>오늘의 도리</span><b>${esc(v.title)}</b></div>`;
+    const inner = `<div class="vthumb">${img}<span class="tag">${esc(v.tag)}</span>${v.views ? `<span class="views">▶ ${esc(v.views)}</span>` : ""}${href ? `<span class="play">${playSvg}</span>` : ""}</div>
+      <h3>${esc(v.title)}</h3><span class="meta">${v.cat === "review" ? "YouTube · 오늘의 도리" : "일오도 · 브랜드 제작기"}</span>`;
+    return href ? `<a class="vcard" href="${esc(href)}" target="_blank" rel="noopener">${inner}</a>` : `<div class="vcard">${inner}</div>`;
+  }).join("");
+}
+document.querySelectorAll(".filters button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".filters button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  renderVideos(b.dataset.f);
+}));
+renderVideos("all");
+
+// instagram profiles
+const tabIcons = `<span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M10 9v6l5-3z"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M7 19c1-3 3-4 5-4s4 1 5 4"/></svg></span>`;
+function tile(src, v, href, alt){
+  const inner = `<img src="${src}" alt="${esc(alt)}" loading="lazy">${v ? `<span class="v">▷ ${v}</span>` : ""}`;
+  return href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${inner}</a>` : `<div>${inner}</div>`;
+}
+function profile(o){
+  const go = o.href ? `<a class="primary" href="${esc(o.href)}" target="_blank" rel="noopener">Instagram에서 보기</a>` : `<span>${esc(o.altAction)}</span>`;
+  return `<article class="ig">
+    <div class="ig-top">${esc(o.handle)}<span>${esc(o.label)}</span></div>
+    <div class="ig-head"><div class="ig-avatar"><div>${o.avatar}</div></div>
+      <div class="ig-stats">${o.stats.map(s => `<div><b>${s[0]}</b><span>${s[1]}</span></div>`).join("")}</div></div>
+    <div class="ig-bio">${o.bio}</div>
+    <div class="ig-actions">${go}<span>메시지</span></div>
+    <div class="ig-hl">${o.hl.map(h => `<div><i>${h[0]}</i>${h[1]}</div>`).join("")}</div>
+    <div class="ig-tabs">${tabIcons}</div>
+    <div class="ig-tiles ${o.sq ? "sq" : ""}">${o.tiles.map(t => tile(t[0], t[1], t[3] || o.href, t[2])).join("")}</div>
+    <p class="ig-note">${o.note}</p>
+  </article>`;
+}
+$("#ig").innerHTML = profile({
+  handle:"official_ilodo", label:"BRAND", href:LINKS.instagram, altAction:"링크 준비 중",
+  avatar:'<svg viewBox="0 0 120 70"><use href="#ilodo"/></svg>',
+  stats:[["44+","릴스"],["8,582","팔로워"],["32","팔로잉"]],
+  bio:'<strong>일월오봉도 브랜드 | 일오도</strong><span class="cat">의류(브랜드)</span><br>당신의 하루를 왕처럼 특별하게 만들어 드리겠습니다<br>옷이 만들어지는 모든 제작 과정 공개<br>전통적 미와 현대적 디자인을 담은 유니크한 디자인',
+  hl:[["가방","가방 디테일"],["Q&A","Q&A 답변"]],
+  tiles:[["img/ig-DJ2D8VsBJth.jpg","38.2만","보부상 모자, 목화솔의 유래를 아시나요?","https://www.instagram.com/official_ilodo/reel/DJ2D8VsBJth/"],["img/ig-DN5xeEJAcmt.jpg","30.5만","이렇게 힙한 전통모자가 있는지 알고 있었어?","https://www.instagram.com/official_ilodo/reel/DN5xeEJAcmt/"],["img/ig-DMrkJzPhYoN.jpg","23.4만","졸업전시 준비하다가 질식사 할 뻔한 사연","https://www.instagram.com/official_ilodo/reel/DMrkJzPhYoN/"],["img/ig-DM7W6pLBXJ9.jpg","13만","시스루 원단 재단 쉽게 하는 방법","https://www.instagram.com/official_ilodo/reel/DM7W6pLBXJ9/"],["img/ig-DMhQsqphJ66.jpg","6.2만","옷에 누가 이걸 100개 넘게 붙여요","https://www.instagram.com/official_ilodo/reel/DMhQsqphJ66/"],["img/ig-DMw1ErgBnlI.jpg","4.8만","교수님들이 어렵다며 뜯어 말리셨던 그 원단","https://www.instagram.com/official_ilodo/reel/DMw1ErgBnlI/"]],
+  note:'최고 조회수 릴스 <b>38.2만 회</b>. 인스타그램·틱톡·유튜브 합산 <b>누적 조회수 820만 회 이상</b>'
+}) + ytChannel();
+
+function ytChannel(){
+  const vids = VIDEOS.filter(v => v.cat === "review").slice(0, 6);
+  const href = LINKS.youtube;
+  const tiles = vids.map(v => {
+    const th = v.thumb ? `<img src="${esc(v.thumb)}" alt="" loading="lazy">` : `<div class="ph-thumb"><b>${esc(v.title)}</b></div>`;
+    return `<a class="yt-v" href="${esc(v.url || href)}" target="_blank" rel="noopener"><div class="yt-th">${th}<span class="yt-dur">${v.tag === "LONG" ? "28:52" : "SHORTS"}</span></div><b>${esc(v.title)}</b><span>조회수 ${esc(v.views)}회</span></a>`;
+  }).join("");
+  return `<article class="ig yt">
+    <div class="ig-top"><span class="yt-logo"><svg viewBox="0 0 24 24"><use href="#i-yt"/></svg>YouTube</span><span>REVIEW</span></div>
+    <div class="yt-head"><div class="yt-avatar">도리</div><div><strong>오늘의 도리</strong><span>@todaysdori · 구독자 31명 · 동영상 60개</span><p>드라마·애니메이션 리뷰와 리액션 채널</p></div></div>
+    <div class="ig-actions">${href ? `<a class="primary yt-sub" href="${esc(href)}" target="_blank" rel="noopener">YouTube에서 보기</a>` : ""}</div>
+    <div class="yt-tabs"><span>홈</span><span class="on">동영상</span><span>Shorts</span></div>
+    <div class="yt-grid">${tiles}</div>
+    <p class="ig-note">재혼황후·꿈빛파티시엘 등 드라마와 애니메이션을 리뷰하는 채널입니다.</p>
+  </article>`;
+}
+
+// IP center bars
+const maxV = Math.max(...IP_VIDEOS.map(x => x[1]));
+const fmt = n => n >= 10000 ? (n/10000).toFixed(1).replace(/\.0$/,"") + "만" : n.toLocaleString("ko-KR");
+$("#ipbars").innerHTML = IP_VIDEOS.map(([l,v]) => `<div class="ipbar"><span>${l}</span><div class="t"><i style="width:${(v/maxV*100).toFixed(1)}%"></i></div><b>${fmt(v)}</b></div>`).join("");
+
+// contact
+
+document.querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", () => {
+  const el = document.getElementById(b.dataset.copy), txt = el.textContent, orig = b.textContent;
+  const done = () => { b.textContent = "복사됨"; setTimeout(() => b.textContent = orig, 1500); };
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "선택됨. 복사하세요"; setTimeout(() => b.textContent = orig, 2000); };
+  try { navigator.clipboard.writeText(txt).then(done, fallback); } catch(e) { fallback(); }
+}));
+
+// process tabs
+document.querySelectorAll('.ptabs [role="tab"]').forEach(t => t.addEventListener("click", () => {
+  document.querySelectorAll('.ptabs [role="tab"]').forEach(x => { const on = x === t; x.setAttribute("aria-selected", on); document.getElementById(x.getAttribute("aria-controls")).hidden = !on; });
+}));
+
+// career timeline: alternate left/right, reveal one by one on scroll
+(() => {
+  const items = document.querySelectorAll(".timeline li");
+  if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.documentElement.classList.add("reveal-on");
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: 0.2, rootMargin: "0px 0px -8% 0px" });
+  items.forEach(li => io.observe(li));
+})();
+
+// lightbox
+const lb = $("#lb"), lbImg = $("#lb-img");
+document.addEventListener("click", e => {
+  const t = e.target.closest("img[data-zoom]");
+  if (t) { lbImg.src = t.src; lbImg.alt = t.alt; lb.hidden = false; $("#lb-close").focus(); }
+});
+lb.addEventListener("click", () => lb.hidden = true);
+document.addEventListener("keydown", e => { if (e.key === "Escape") lb.hidden = true; });
+</script>
+
+</body>
+</html>
